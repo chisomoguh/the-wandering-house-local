@@ -1,0 +1,12 @@
+rectangle-container{
+    width: 50%;
+    
+}
+
+.rectangle-picture{
+    transition:0.3s;
+}
+
+.rectangle-picture:hover {
+    transform: scale(1.1); 
+  }
