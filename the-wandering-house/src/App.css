@@ -68,6 +68,9 @@ color: #1F638C;
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.52);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .stairs-container{

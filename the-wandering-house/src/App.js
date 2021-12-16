@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Rectangle from './components/rectangle/rectangle/rectangle.component'
 import Card from './components/rectangle/card/card.component.jsx'
+import PopUp from './components/rectangle/pop-up/pop-up.component.jsx'
 import './App.css';
 
 class App extends Component {
@@ -11,6 +12,7 @@ constructor(props) {
   this.getPictures = this.getPictures.bind(this);
   this.activePopUp = this.activePopUp.bind(this);
   this.hidePopUp = this.hidePopUp.bind(this);
+  this.handleClickChildElement = this.handleClickChildElement.bind(this);
 }
 
 componentDidMount() {
@@ -49,7 +51,11 @@ activePopUp (){
 hidePopUp(){
   this.setState({ showPopUp: false });
   console.log('hide pop up')
+}
 
+handleClickChildElement (event){
+    event.stopPropagation();
+    console.log('handleChildClick');
 }
 
 render() {
@@ -107,11 +113,8 @@ render() {
 
         { this.state.showPopUp === true ? 
         <div className="pop-up-container" onClick={this.hidePopUp}>
-          
-          <div>
-            <h1>Hi</h1> 
-            <h1>How are youuuuuuuuu</h1> 
-          </div></div> 
+          <PopUp onClick={this.handleClickChildElement}/>
+        </div>
         : console.log('baf') }
         
       </div>
