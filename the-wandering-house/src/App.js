@@ -80,7 +80,7 @@ handleClickChildElement (event){
 render() {
 
   
-
+  // making a random comment
   const rectangles_measuments_top_container = {1:9, 2:7, 3:7, 4:7, 5:7, 6:7, 8:7, 9:7, 10:9}
 
   if (this.state.width > 500){
