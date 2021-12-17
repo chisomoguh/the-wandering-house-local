@@ -82,6 +82,8 @@ render() {
   
 
   const rectangles_measuments_top_container = {1:9, 2:7, 3:7, 4:7, 5:7, 6:7, 8:7, 9:7, 10:9}
+  // [] -> index == id - 1 
+  // [{}, ] index == id -1 { id: 1, heigth: 9}
 
   if (this.state.width > 500){
     return(
@@ -97,7 +99,7 @@ render() {
                       {
                       this.state.pictures.map(picture => (
                       //console.log(`${rectangles_measuments_top_container}.${picture.id}`)
-                      <Rectangle key={picture.id} height={'10'} onClick={this.activePopUp} image_url={this.cleanImageUrl(picture.image_url)} id={picture.id}/>
+                      <Rectangle key={picture.id} height={'7'} onClick={this.activePopUp} image_url={this.cleanImageUrl(picture.image_url)} id={picture.id}/>
                       )
                       )
                       }

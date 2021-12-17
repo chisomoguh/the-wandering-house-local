@@ -8,9 +8,11 @@ export const PopUp = ({ image_url, audio_url, embrioder, title, translation, sta
     <div className='pop-up-container-left'>
         <div className='pop-up-flex-box'>
          <div className='pop-up-flex-column'>
+
+    
           <img
             alt='rectangle'
-            src={`https://drive.google.com/uc?export=view&id=1pRVMohZBV3MGDBGensrOTPwqIe-BFcp_`}
+            src={`https://drive.google.com/uc?export=view&id=1zx0ZvECZLK3EjW5MBx6u-x69yXnM7lUZ`}
             style={{height: '100%'}}
           />
         
