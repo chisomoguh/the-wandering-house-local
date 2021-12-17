@@ -7,12 +7,19 @@ import './App.css';
 class App extends Component {
 constructor(props) {
   super(props);
-  this.state = { width: 0, height: 0, showPopUp: false };
+  this.state = { 
+    width: 0, 
+    height: 0, 
+    showPopUp: false,
+    popUpId: 0,
+    pictures: []
+  };
   this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   this.getPictures = this.getPictures.bind(this);
   this.activePopUp = this.activePopUp.bind(this);
   this.hidePopUp = this.hidePopUp.bind(this);
   this.handleClickChildElement = this.handleClickChildElement.bind(this);
+  this.cleanImageUrl = this.cleanImageUrl.bind(this);
 }
 
 componentDidMount() {
@@ -29,17 +36,29 @@ updateWindowDimensions() {
   this.setState({ width: window.innerWidth, height: window.innerHeight });
 }
 
+
 getPictures (){
 
-  fetch('https://api.airtable.com/v0/appjPLcxTlXQZZfMa/northfield/recEia0vQTq8Oe6RH', {
+  let temp_pictures=[]
+
+  fetch('https://api.airtable.com/v0/appjPLcxTlXQZZfMa/tblZ9LuBa045zY0lw?fields%5B%5D=ID&fields%5B%5D=Image+Link', {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer keyFiXILZhl7sQLsn'
     }
   })
   .then(response => response.json())
-  .then(response => console.log('hi', response))
-  
+  .then(response => {response.records.map(record => 
+    temp_pictures.push({id: record.fields["ID"], image_url: record.fields["Image Link"]})); return temp_pictures} )
+  .then(pictures_list => this.setState({ pictures: pictures_list }));
+
+}
+
+cleanImageUrl(image_url){
+  const url_sections = image_url.split('/');
+  console.log(url_sections[5])
+  return url_sections[5]
+
 }
 
 activePopUp (){
@@ -60,7 +79,9 @@ handleClickChildElement (event){
 
 render() {
 
-  const rectangles_id_measuments = [{id:1, height:'9'}, {id:2 , height:'9'}, {id:3, height:'9'}, {id:4, height:'9'}, {id:5, height:'9'}]
+  
+
+  const rectangles_measuments_top_container = {1:9, 2:7, 3:7, 4:7, 5:7, 6:7, 8:7, 9:7, 10:9}
 
   if (this.state.width > 500){
     return(
@@ -72,9 +93,14 @@ render() {
                 
                 <div className="top-container">
 
-                      {rectangles_id_measuments.map(rectangle => (
-                      <Rectangle key={rectangle.id} height={rectangle.height} onClick={this.activePopUp} />
-                      ))}
+                    
+                      {
+                      this.state.pictures.map(picture => (
+                      //console.log(`${rectangles_measuments_top_container}.${picture.id}`)
+                      <Rectangle key={picture.id} height={'10'} onClick={this.activePopUp} image_url={this.cleanImageUrl(picture.image_url)} id={picture.id}/>
+                      )
+                      )
+                      }
 
                 </div>
 
