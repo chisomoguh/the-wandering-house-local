@@ -11,7 +11,7 @@ constructor(props) {
     width: 0, 
     height: 0, 
     showPopUp: false,
-    popUpId: 0,
+    popUpInfo: {},
     pictures: []
   };
   this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
@@ -20,6 +20,7 @@ constructor(props) {
   this.hidePopUp = this.hidePopUp.bind(this);
   this.handleClickChildElement = this.handleClickChildElement.bind(this);
   this.cleanImageUrl = this.cleanImageUrl.bind(this);
+
 }
 
 componentDidMount() {
@@ -38,9 +39,7 @@ updateWindowDimensions() {
 
 
 getPictures (){
-
   let temp_pictures=[]
-
   fetch('https://api.airtable.com/v0/appjPLcxTlXQZZfMa/tblZ9LuBa045zY0lw?fields%5B%5D=ID&fields%5B%5D=Image+Link', {
     method: 'GET',
     headers: {
@@ -54,16 +53,42 @@ getPictures (){
 
 }
 
+getPopUpInfo(id){
+  console.log('this is get pop uo info')
+
+  let temp_dict = 0
+  fetch(`https://api.airtable.com/v0/appjPLcxTlXQZZfMa/tblZ9LuBa045zY0lw?fields%5B%5D=Translation&fields%5B%5D=ID&fields%5B%5D=Embroiderer&fields%5B%5D=Main+Text&fields%5B%5D=Translation&fields%5B%5D=Statement&fields%5B%5D=Age&fields%5B%5D=Image+Link&fields%5B%5D=Audio+Link&filterByFormula=ID%3D${id}`, {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer keyFiXILZhl7sQLsn'
+    }
+  })
+  .then(response => response.json())
+  //.then(popUpAttributes =>this.setState({ popUpInfo : { popUpAttributes.records[0].fields["Image Link"]}))
+  .then(popUpAttributes => { temp_dict = { translation: popUpAttributes.records[0].fields.Translation,
+                                                          image_url: popUpAttributes.records[0].fields["Image Link"],
+                                                          main_text: popUpAttributes.records[0].fields["Main Text"],
+                                                          statement: popUpAttributes.records[0].fields.Statement,
+                                                          age: popUpAttributes.records[0].fields.Age,
+                                                          embroiderer: popUpAttributes.records[0].fields.Embroiderer,
+                                                          audio_url :popUpAttributes.records[0].fields["Audio Link"]
+                                                        }; return temp_dict})
+
+  .then(popUpInfoDict => this.setState({ popUpInfo: popUpInfoDict}));
+}
+
 cleanImageUrl(image_url){
   const url_sections = image_url.split('/');
-  console.log(url_sections[5])
   return url_sections[5]
 
 }
 
-activePopUp (){
+activePopUp (pictureId){
+  // When the user clicks on a rectangle, console log the id of the rectangle and update popUpId
   this.setState({ showPopUp: true });
-  console.log('show pop up');
+  // this.setState({ popUpId: pictureId });
+  console.log(`show picture id ${pictureId}`);
+  this.getPopUpInfo(pictureId);
 
 }
 
@@ -78,8 +103,10 @@ handleClickChildElement (event){
 }
 
 render() {
-
   
+  const { image_url, audio_url, age, statement, translation, title, embroiderer, main_text } = this.state.popUpInfo;
+  
+  console.log(this.state.popUpInfo);
   const rectangles_measuments_top_container = {1:9, 2:7, 3:7, 4:7, 5:7, 6:7, 8:7, 9:7, 10:9}
   // [] -> index == id - 1 
   // [{}, ] index == id -1 { id: 1, heigth: 9}
@@ -97,9 +124,8 @@ render() {
                     
                       {
                       this.state.pictures.map(picture => (
-                      //console.log(`${rectangles_measuments_top_container}.${picture.id}`)
-                      <Rectangle key={picture.id} height={'7'} onClick={this.activePopUp} image_url={this.cleanImageUrl(picture.image_url)} id={picture.id}/>
-                      )
+                        
+                      <Rectangle key={picture.id} height={'7'} onClick={() => this.activePopUp(picture.id)}  image_url={this.cleanImageUrl(picture.image_url)} id={picture.id}/>)
                       )
                       }
 
@@ -140,9 +166,9 @@ render() {
 
         { this.state.showPopUp === true ? 
         <div className="pop-up-container" onClick={this.hidePopUp}>
-          <PopUp onClick={this.handleClickChildElement}/>
+          <PopUp onClick={this.handleClickChildElement} cleanImageUrl={this.cleanImageUrl} image_url={image_url} audio_url={audio_url} translation={translation} statement={statement} title={title} age={age} main_text={main_text} embroiderer={embroiderer}/>
         </div>
-        : console.log('baf') }
+        : null}
         
       </div>
 
