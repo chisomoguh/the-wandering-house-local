@@ -40,7 +40,7 @@ updateWindowDimensions() {
 
 getPictures (){
   let temp_pictures=[]
-  fetch('https://api.airtable.com/v0/appjPLcxTlXQZZfMa/tblZ9LuBa045zY0lw?fields%5B%5D=ID&fields%5B%5D=Image+Link', {
+  fetch('https://api.airtable.com/v0/appjPLcxTlXQZZfMa/tblZ9LuBa045zY0lw?fields%5B%5D=ID&fields%5B%5D=Image+Link+Low+Quality', {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer keyFiXILZhl7sQLsn'
@@ -48,7 +48,7 @@ getPictures (){
   })
   .then(response => response.json())
   .then(response => {response.records.map(record => 
-    temp_pictures.push({id: record.fields["ID"], image_url: record.fields["Image Link"]})); return temp_pictures} )
+    temp_pictures.push({id: record.fields["ID"], image_url: record.fields["Image Link Low Quality"]})); return temp_pictures} )
   .then(pictures_list => this.setState({ pictures: pictures_list }));
 
 }
@@ -57,22 +57,23 @@ getPopUpInfo(id){
   console.log('this is get pop uo info')
 
   let temp_dict = 0
-  fetch(`https://api.airtable.com/v0/appjPLcxTlXQZZfMa/tblZ9LuBa045zY0lw?fields%5B%5D=Translation&fields%5B%5D=ID&fields%5B%5D=Embroiderer&fields%5B%5D=Main+Text&fields%5B%5D=Translation&fields%5B%5D=Statement&fields%5B%5D=Age&fields%5B%5D=Image+Link&fields%5B%5D=Audio+Link&filterByFormula=ID%3D${id}`, {
+  fetch(`https://api.airtable.com/v0/appjPLcxTlXQZZfMa/tblZ9LuBa045zY0lw?fields%5B%5D=Translation&fields%5B%5D=ID&fields%5B%5D=Embroiderer&fields%5B%5D=Main+Text&fields%5B%5D=Translation&fields%5B%5D=Statement&fields%5B%5D=Age&fields%5B%5D=Image+Link+Low+Quality&fields%5B%5D=Audio+Link&filterByFormula=ID%3D${id}`, {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer keyFiXILZhl7sQLsn'
     }
   })
   .then(response => response.json())
-  //.then(popUpAttributes =>this.setState({ popUpInfo : { popUpAttributes.records[0].fields["Image Link"]}))
+  .then(response => {console.log(response) ; return(response)})
+  
   .then(popUpAttributes => { temp_dict = { translation: popUpAttributes.records[0].fields.Translation,
-                                                          image_url: popUpAttributes.records[0].fields["Image Link"],
+                                                          image_url: popUpAttributes.records[0].fields["Image Link Low Quality"],
                                                           main_text: popUpAttributes.records[0].fields["Main Text"],
                                                           statement: popUpAttributes.records[0].fields.Statement,
                                                           age: popUpAttributes.records[0].fields.Age,
                                                           embroiderer: popUpAttributes.records[0].fields.Embroiderer,
                                                           audio_url :popUpAttributes.records[0].fields["Audio Link"]
-                                                        }; return temp_dict})
+                                                        }; console.log(`This as ${popUpAttributes}`); return temp_dict})
 
   .then(popUpInfoDict => this.setState({ popUpInfo: popUpInfoDict}));
 }
@@ -87,7 +88,7 @@ activePopUp (pictureId){
   // When the user clicks on a rectangle, console log the id of the rectangle and update popUpId
   this.setState({ showPopUp: true });
   // this.setState({ popUpId: pictureId });
-  console.log(`show picture id ${pictureId}`);
+  //console.log(`show picture id ${pictureId}`);
   this.getPopUpInfo(pictureId);
 
 }
@@ -125,7 +126,7 @@ render() {
                       {
                       this.state.pictures.map(picture => (
                         
-                      <Rectangle key={picture.id} height={'7'} onClick={() => this.activePopUp(picture.id)}  image_url={this.cleanImageUrl(picture.image_url)} id={picture.id}/>)
+                      <Rectangle key={picture.id} height={'7'} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>)
                       )
                       }
 
@@ -166,7 +167,7 @@ render() {
 
         { this.state.showPopUp === true ? 
         <div className="pop-up-container" onClick={this.hidePopUp}>
-          <PopUp onClick={this.handleClickChildElement} cleanImageUrl={this.cleanImageUrl} image_url={image_url} audio_url={audio_url} translation={translation} statement={statement} title={title} age={age} main_text={main_text} embroiderer={embroiderer}/>
+          <PopUp onClick={this.handleClickChildElement}  image_url={image_url} audio_url={audio_url} translation={translation} statement={statement} title={title} age={age} main_text={main_text} embroiderer={embroiderer}/>
         </div>
         : null}
         

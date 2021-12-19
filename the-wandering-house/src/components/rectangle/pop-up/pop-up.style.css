@@ -13,6 +13,7 @@
 
 .pop-up-container-rigth{
     padding: 1rem;
+    overflow: scroll;
 }
 .pop-up-flex-box{
     display: flex;
