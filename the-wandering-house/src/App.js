@@ -37,6 +37,26 @@ updateWindowDimensions() {
   this.setState({ width: window.innerWidth, height: window.innerHeight });
 }
 
+// trying to implement the font-changing part of the pop-ups
+
+/*
+loadFontsList(){
+  //let hehhe = []
+  fetch('https://fonts.googleapis.com/css2?family=Caveat&family=Kranky&family=Shadows+Into+Light+Two' , {
+    method: 'GET',
+  })
+  .then(response => response.json())
+  .then(response => {console.log('loaded google fonts list: ', response.items.length); return(response)})
+}
+
+chooseRandomFont() {
+  // some code goes here
+}
+
+loadRandomFont() {
+  // some more code goes here
+}
+*/
 
 getPictures (){
   let temp_pictures=[]
