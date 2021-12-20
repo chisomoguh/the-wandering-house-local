@@ -40,3 +40,14 @@
 .pop-up-statement-text{
     font-family: 'Open Sans';
 }
+
+.title-text {
+    font-family: 'Caveat', cursive;
+    font-family: 'Kranky', cursive;
+    font-family: 'Shadows Into Light Two', cursive;
+}
+
+.translation {
+    color:maroon;
+    font-weight: 700;
+}

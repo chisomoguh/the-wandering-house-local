@@ -3,6 +3,7 @@ import React from 'react';
 import './pop-up.style.css';
 
 export const PopUp = ({ image_url, audio_url, age, statement, translation, title, embroiderer, main_text, onClick}) => (
+  
   <div className='pop-up-div' onClick={onClick}>
      
     <div className='pop-up-container-left'>
@@ -20,15 +21,13 @@ export const PopUp = ({ image_url, audio_url, age, statement, translation, title
           <audio controls="controls" style={{width: '90%'}} 
               src={`https://docs.google.com/uc?export=download&id=${audio_url}`}>
           </audio>
-          <p>{`When this was recorded, the speaker was ${age} years old.`}</p>
+          <p><i>{`When this was recorded, the speaker was ${age} years old.`}</i></p>
         </div>
     </div>
 
     <div className='pop-up-container-rigth'>
-        <h2>{main_text}</h2>
-        <h3>Translation</h3>
-        <p>{`${translation}`}</p>
-        <h3>Statement from the Embroiderer</h3>
+        <div className='title-text'><h2>{main_text}</h2></div>
+        <div className='translation'><p>{`${translation}`}</p></div>
         <p className='pop-up-statement-text'>{statement}</p>
 
     </div>
