@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat&family=Cormorant+Upright&family=Fuzzy+Bubbles&family=Indie+Flower&family=Kranky&family=Lobster+Two&family=Patrick+Hand&family=Shadows+Into+Light+Two&display=swap');
+
 .pop-up-div{
     background-color: white;
     height: 65%;
@@ -39,12 +41,6 @@
 
 .pop-up-statement-text{
     font-family: 'Open Sans';
-}
-
-.title-text {
-    font-family: 'Caveat', cursive;
-    font-family: 'Kranky', cursive;
-    font-family: 'Shadows Into Light Two', cursive;
 }
 
 .translation {

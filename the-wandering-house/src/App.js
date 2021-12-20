@@ -37,26 +37,13 @@ updateWindowDimensions() {
   this.setState({ width: window.innerWidth, height: window.innerHeight });
 }
 
-// trying to implement the font-changing part of the pop-ups
-
-/*
-loadFontsList(){
-  //let hehhe = []
-  fetch('https://fonts.googleapis.com/css2?family=Caveat&family=Kranky&family=Shadows+Into+Light+Two' , {
-    method: 'GET',
-  })
-  .then(response => response.json())
-  .then(response => {console.log('loaded google fonts list: ', response.items.length); return(response)})
-}
-
 chooseRandomFont() {
-  // some code goes here
+  let fontList = ['Kranky', 'Caveat', 'Shadows into Light Two', 'Architects Daughter', 'Fuzzy Bubbles', 'Lobster Two', 'Indie Flower', 'Patrick Hand', 'Cormorant Upright']
+  const randomIndex = Math.floor(Math.random() * fontList.length);
+  const choosedFont = fontList[randomIndex];
+  console.log(choosedFont);
+  return choosedFont;
 }
-
-loadRandomFont() {
-  // some more code goes here
-}
-*/
 
 getPictures (){
   let temp_pictures=[]
@@ -74,7 +61,7 @@ getPictures (){
 }
 
 getPopUpInfo(id){
-  console.log('this is get pop uo info')
+  console.log('this is get pop up info')
 
   let temp_dict = 0
   fetch(`https://api.airtable.com/v0/appjPLcxTlXQZZfMa/tblZ9LuBa045zY0lw?fields%5B%5D=Translation&fields%5B%5D=ID&fields%5B%5D=Embroiderer&fields%5B%5D=Main+Text&fields%5B%5D=Translation&fields%5B%5D=Statement&fields%5B%5D=Age&fields%5B%5D=Image+Link+Low+Quality&fields%5B%5D=Audio+Link&filterByFormula=ID%3D${id}`, {
@@ -92,7 +79,8 @@ getPopUpInfo(id){
                                                           statement: popUpAttributes.records[0].fields.Statement,
                                                           age: popUpAttributes.records[0].fields.Age,
                                                           embroiderer: popUpAttributes.records[0].fields.Embroiderer,
-                                                          audio_url :popUpAttributes.records[0].fields["Audio Link"]
+                                                          audio_url :popUpAttributes.records[0].fields["Audio Link"],
+                                                          main_font: this.chooseRandomFont()
                                                         }; console.log(`Pop up attributes: ${popUpAttributes}`); return temp_dict})
 
   .then(popUpInfoDict => this.setState({ popUpInfo: popUpInfoDict}));
@@ -125,7 +113,7 @@ handleClickChildElement (event){
 
 render() {
   
-  const { image_url, audio_url, age, statement, translation, embroiderer, main_text } = this.state.popUpInfo;
+  const { image_url, audio_url, age, statement, translation, embroiderer, main_text, main_font} = this.state.popUpInfo;
   
   console.log(this.state.popUpInfo);
   const rectangles_measuments_top_container = {1:9, 2:7, 3:7, 4:7, 5:7, 6:7, 8:7, 9:7, 10:9}
@@ -187,7 +175,7 @@ render() {
 
         { this.state.showPopUp === true ? 
         <div className="pop-up-container" onClick={this.hidePopUp}>
-          <PopUp onClick={this.handleClickChildElement}  image_url={image_url} audio_url={audio_url} translation={translation} statement={statement}  age={age} main_text={main_text} embroiderer={embroiderer}/>
+          <PopUp onClick={this.handleClickChildElement}  image_url={image_url} audio_url={audio_url} translation={translation} statement={statement}  age={age} main_text={main_text} embroiderer={embroiderer} main_font={main_font}/>
         </div>
         : null}
         
