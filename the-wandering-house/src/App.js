@@ -73,7 +73,7 @@ getPopUpInfo(id){
                                                           age: popUpAttributes.records[0].fields.Age,
                                                           embroiderer: popUpAttributes.records[0].fields.Embroiderer,
                                                           audio_url :popUpAttributes.records[0].fields["Audio Link"]
-                                                        }; console.log(`This as ${popUpAttributes}`); return temp_dict})
+                                                        }; console.log(`Pop up attributes: ${popUpAttributes}`); return temp_dict})
 
   .then(popUpInfoDict => this.setState({ popUpInfo: popUpInfoDict}));
 }
@@ -87,15 +87,15 @@ cleanImageUrl(image_url){
 activePopUp (pictureId){
   // When the user clicks on a rectangle, console log the id of the rectangle and update popUpId
   this.setState({ showPopUp: true });
-  // this.setState({ popUpId: pictureId });
-  //console.log(`show picture id ${pictureId}`);
   this.getPopUpInfo(pictureId);
 
 }
 
 hidePopUp(){
   this.setState({ showPopUp: false });
+  this.setState({ popUpInfo: {} });
   console.log('hide pop up')
+
 }
 
 handleClickChildElement (event){
@@ -105,7 +105,7 @@ handleClickChildElement (event){
 
 render() {
   
-  const { image_url, audio_url, age, statement, translation, title, embroiderer, main_text } = this.state.popUpInfo;
+  const { image_url, audio_url, age, statement, translation, embroiderer, main_text } = this.state.popUpInfo;
   
   console.log(this.state.popUpInfo);
   const rectangles_measuments_top_container = {1:9, 2:7, 3:7, 4:7, 5:7, 6:7, 8:7, 9:7, 10:9}
@@ -167,7 +167,7 @@ render() {
 
         { this.state.showPopUp === true ? 
         <div className="pop-up-container" onClick={this.hidePopUp}>
-          <PopUp onClick={this.handleClickChildElement}  image_url={image_url} audio_url={audio_url} translation={translation} statement={statement} title={title} age={age} main_text={main_text} embroiderer={embroiderer}/>
+          <PopUp onClick={this.handleClickChildElement}  image_url={image_url} audio_url={audio_url} translation={translation} statement={statement}  age={age} main_text={main_text} embroiderer={embroiderer}/>
         </div>
         : null}
         

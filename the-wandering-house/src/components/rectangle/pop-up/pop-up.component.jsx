@@ -18,7 +18,7 @@ export const PopUp = ({ image_url, audio_url, age, statement, translation, title
           </div>
           <p>Embroiderer: {embroiderer === undefined ? 'Unknown' : embroiderer}</p>
           <audio controls="controls" style={{width: '90%'}} 
-              src="https://docs.google.com/uc?export=download&amp;id=1JW1CwDwfs3_HbyYz0JU7VjNj2vs9W4IE">
+              src={`https://docs.google.com/uc?export=download&id=${audio_url}`}>
           </audio>
           <p>{`When this was recorded, the speaker was ${age} years old.`}</p>
         </div>
