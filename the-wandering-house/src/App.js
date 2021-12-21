@@ -60,7 +60,7 @@ loadRandomFont() {
 
 getPictures (){
   let temp_pictures=[]
-  fetch('https://api.airtable.com/v0/appjPLcxTlXQZZfMa/tblZ9LuBa045zY0lw?fields%5B%5D=ID&fields%5B%5D=Image+Link+Low+Quality', {
+  fetch('https://api.airtable.com/v0/appjPLcxTlXQZZfMa/tblZ9LuBa045zY0lw?fields%5B%5D=ID&fields%5B%5D=Image+Link+Low+Quality&sort%5B0%5D%5Bfield%5D=ID&sort%5B0%5D%5Bdirection%5D=asc', {
     method: 'GET',
     headers: {
       'Authorization': 'Bearer keyFiXILZhl7sQLsn'
@@ -84,8 +84,6 @@ getPopUpInfo(id){
     }
   })
   .then(response => response.json())
-  .then(response => {console.log(response) ; return(response)})
-  
   .then(popUpAttributes => { temp_dict = { translation: popUpAttributes.records[0].fields.Translation,
                                                           image_url: popUpAttributes.records[0].fields["Image Link Low Quality"],
                                                           main_text: popUpAttributes.records[0].fields["Main Text"],
@@ -93,7 +91,7 @@ getPopUpInfo(id){
                                                           age: popUpAttributes.records[0].fields.Age,
                                                           embroiderer: popUpAttributes.records[0].fields.Embroiderer,
                                                           audio_url :popUpAttributes.records[0].fields["Audio Link"]
-                                                        }; console.log(`Pop up attributes: ${popUpAttributes}`); return temp_dict})
+                                                        };  return temp_dict})
 
   .then(popUpInfoDict => this.setState({ popUpInfo: popUpInfoDict}));
 }
@@ -128,7 +126,13 @@ render() {
   const { image_url, audio_url, age, statement, translation, embroiderer, main_text } = this.state.popUpInfo;
   
   console.log(this.state.popUpInfo);
-  const rectangles_measuments_top_container = {1:9, 2:7, 3:7, 4:7, 5:7, 6:7, 8:7, 9:7, 10:9}
+  const rectangles_measuments= [{}, {id:1, height:9}, {id:2, height:6}, {id:3, height:6}, {id:4, height:6}, {id:5, height:6}, {id:6, height:6}, {id:7, height:6}, {id:8, height:6}, {id:9, height:9}, 
+                                {id:10, height:6},{id:11, height:6}, {id:12, height:6}, {id:13, height:6}, {id:14, height:6}, {id:15, height:6}, {id:16, height:6}, {id:17, height:6}, {id:18, height:6}, {id:19, height:6}, {id:20, height:6},
+                                {id:21, height:6}, {id:22, height:6}, {id:23, height:6}, {id:24, height:6}, {id:25, height:5}, {id:26, height:6}, {id:27, height:6}, {id:28, height:6}, {id:29, height:6}, 
+                                {id:30, height:5},{id:31, height:5}, {id:32, height:5}, {id:33, height:5}, {id:34, height:5}, {id:35, height:5}, 
+                                {id:36, height:7}, {id:37, height:7}, {id:38, height:7}, 
+                                {id:39, height:6}, {id:40, height:6},
+                                {id:41, height:3}, {id:42, height:6}, {id:43, height:6}, {id:44, height:6}, {id:45, height:6}, {id:46, height:7}, {id:47, height:6}, {id:48, height:6}, {id:49, height:4}, {id:50, height:6}]
   // [] -> index == id - 1 
   // [{}, ] index == id -1 { id: 1, heigth: 9}
 
@@ -141,27 +145,64 @@ render() {
           <div className='main-title-div'><h1 className='main-title' >I know I am home when...</h1></div>
                 
                 <div className="top-container">
-
-                    
                       {
-                      this.state.pictures.map(picture => (
-                        
-                      <Rectangle key={picture.id} height={'7'} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>)
-                      )
+                      this.state.pictures.filter(picture => picture.id <= 9).map(picture => (
+                      <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))
                       }
 
                 </div>
+                
+                <div className='main-container-grid'>
+                    <div className="left-container">
+                      {
+                      this.state.pictures.filter(picture => picture.id >= 10 &&  picture.id <= 19).map(picture => (
+                      <Rectangle key={picture.id} height={'5'} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))
+                      }
 
-                <div className="left-container">
+                    </div>
+                    
+                    <div className='vertical-blue-line'></div>
 
-                </div>
+                    <div className="middle-container">
+                      <div className="first-row-middle-container">
+                        {this.state.pictures.filter(picture => picture.id >= 30 &&  picture.id <= 35).map(picture => (
+                        <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
+                      </div>
+                      <div className="second-row-middle-container">
+                        {this.state.pictures.filter(picture => picture.id >= 36 &&  picture.id <= 38).map(picture => (
+                        <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
+                      </div>
 
-                <div className="middle-container">
+                      <div className="third-row-middle-container">
+                          <div className="first-sub-row-middle-container">
+                            {this.state.pictures.filter(picture => picture.id == 39 ||  picture.id == 44 || picture.id == 40 || picture.id == 45).map(picture => (
+                            <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
+                          </div>
 
-                </div>
+                          <div className="second-sub-row-middle-container">
+                            {this.state.pictures.filter(picture => picture.id == 41 ||  picture.id == 46 || picture.id == 49).map(picture => (
+                            <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
+                          </div>
 
-                <div className="right-container">
+                          <div className="third-sub-row-middle-container">
+                          {this.state.pictures.filter(picture => picture.id == 42 ||  picture.id == 43 || picture.id == 47 || picture.id == 48).map(picture => (
+                            <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
+                          </div>
+                      </div>
 
+                    </div>
+
+                    <div className='vertical-blue-line'></div>
+                     
+
+
+                    <div className="right-container">
+                       {
+                      this.state.pictures.filter(picture => picture.id >= 20 &&  picture.id <= 29).map(picture => (
+                      <Rectangle key={picture.id} height={'5.5'} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))
+                      }
+
+                    </div>
                 </div>
 
                 <div className="bottom-container">

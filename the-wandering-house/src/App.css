@@ -51,6 +51,8 @@ color: #1F638C;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  /* align-items: flex-end; */
+  align-items: center;
 }
 
 .bottom-container{
@@ -88,5 +90,64 @@ color: #1F638C;
   border-radius: 40px;
   height: 5px;
   background-color: #03658C;
+
+}
+
+.vertical-blue-line{
+  background-color: #03658C;
+  width: 0.3rem;
+}
+
+.main-container-grid{
+  display: grid;
+  grid-template-columns: auto 1% 48% 1% auto;
+
+}
+
+
+.left-container{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
+}
+
+.right-container{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
+}
+
+.first-row-middle-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.second-row-middle-container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.second-sub-row-middle-container{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+
+.third-row-middle-container{
+  display: grid;
+  grid-template-columns: 33% 30% 33%;
+
+}
+
+.first-sub-row-middle-container{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.third-sub-row-middle-container{
+  display: grid;
+  grid-template-columns: 50% 50%;
 
 }
