@@ -2,7 +2,7 @@ import React from 'react';
 
 import './pop-up.style.css';
 
-export const PopUp = ({ image_url, audio_url, age, statement, translation, title, embroiderer, main_text, onClick}) => (
+export const PopUp = ({ image_url, audio_url, age, statement, translation, title, embroiderer, main_text, main_font, onClick}) => (
   
   <div className='pop-up-div' onClick={onClick}>
      
@@ -26,7 +26,7 @@ export const PopUp = ({ image_url, audio_url, age, statement, translation, title
     </div>
 
     <div className='pop-up-container-rigth'>
-        <div className='title-text'><h2>{main_text}</h2></div>
+        <div style={{ fontFamily: `${main_font}`}}><h2>{main_text}</h2></div>
         <div className='translation'><p>{`${translation}`}</p></div>
         <p className='pop-up-statement-text'>{statement}</p>
 
