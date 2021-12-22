@@ -43,7 +43,12 @@
     font-family: 'Open Sans';
 }
 
+.main-text {
+    font-size: 1.1em;
+}
+
 .translation {
     color:maroon;
     font-weight: 700;
+    font-size: 1.2em;
 }
