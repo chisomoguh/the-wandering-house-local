@@ -163,6 +163,20 @@ render() {
                                     {this.state.pictures.filter(picture => picture.id === 44 ||  picture.id === 45).map(picture => (
                                     <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
                                     </div>
+
+                                    <div className='just-a-placeholder'></div>
+
+                                    <div className='rectangle-for-diamond'>  
+                                      <div className="line"></div>
+                                      <div className="diamonds-div">
+                                        <div class='diamonds'></div>
+                                        <div class='diamonds'></div>
+                                        <div class='diamonds'></div>
+                                        <div class='diamonds'></div>
+                                        <div class='diamonds'></div>
+                                        <div class='diamonds'></div>
+                                      </div>
+                                    </div>
                               </div>
 
                               <div className="second-sub-row-middle-container">
@@ -191,6 +205,22 @@ render() {
                                       {this.state.pictures.filter(picture => picture.id === 47 ||  picture.id === 48).map(picture => (
                                       <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
                                   </div>
+
+                                  <div className='just-a-placeholder'></div>
+
+                                  <div className='rectangle-for-diamond'>  
+                                      <div className="line"></div>
+
+                                      <div className="diamonds-div">
+                                        <div class='diamonds'></div>
+                                        <div class='diamonds'></div>
+                                        <div class='diamonds'></div>
+                                        <div class='diamonds'></div>
+                                        <div class='diamonds'></div>
+                                        <div class='diamonds'></div>
+                                      </div>
+                                    </div>
+
                               </div>
                           </div>
                     </div>
