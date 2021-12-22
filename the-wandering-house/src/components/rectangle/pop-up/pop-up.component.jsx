@@ -26,8 +26,8 @@ export const PopUp = ({ image_url, audio_url, age, statement, translation, title
     </div>
 
     <div className='pop-up-container-rigth'>
-        <div style={{ fontFamily: `${main_font}`}}><h2>{main_text}</h2></div>
-        <div className='translation'><p>{`${translation}`}</p></div>
+        <div className='main-text' style={{ fontFamily: `${main_font}`}}><h2>{main_text}</h2></div>
+        <div className='translation' style={{ fontFamily: `${main_font}`}}><h4>{`${translation}`}</h4></div>
         <p className='pop-up-statement-text'>{statement}</p>
 
     </div>
