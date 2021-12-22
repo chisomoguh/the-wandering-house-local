@@ -1,10 +1,14 @@
-rectangle-container{
-    width: 50%;
+.rectangle-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     
 }
 
 .rectangle-picture{
     transition:0.4s;
+    height: max-content;
 }
 
 .rectangle-picture:hover {

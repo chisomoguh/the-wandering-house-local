@@ -1,8 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@700&family=Tangerine:wght@700&display=swap');
 
+html {
+  overflow-y:scroll;
+}
+
 .body{
   margin: 0;
   padding: 0;
+  overflow-y: scroll;
   
 }
 
@@ -48,11 +53,9 @@ color: #1F638C;
 }
 
 .top-container{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  /* align-items: flex-end; */
-  align-items: center;
+  display: grid;
+  /* grid-template-columns: 14% 14% 14% 14% 14% 14% 14% 14% 14% ; */
+  grid-template-columns: repeat(9, auto);
 }
 
 .bottom-container{
@@ -100,7 +103,7 @@ color: #1F638C;
 
 .main-container-grid{
   display: grid;
-  grid-template-columns: auto 1% 48% 1% auto;
+  grid-template-columns: 25% 1% 48% 1% 25%;
 
 }
 
@@ -118,9 +121,8 @@ color: #1F638C;
 }
 
 .first-row-middle-container{
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(6, auto);
 }
 
 .second-row-middle-container{
@@ -137,17 +139,62 @@ color: #1F638C;
 
 .third-row-middle-container{
   display: grid;
-  grid-template-columns: 33% 30% 33%;
+  grid-template-columns: 36% 28% 36%;
 
 }
 
 .first-sub-row-middle-container{
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-rows: 40% 60%;
+
 }
 
 .third-sub-row-middle-container{
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-rows: 40% 60%;
 
+}
+
+.first-sub-row-flex{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.second-sub-row-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.main-container-phone{
+  display: flex;
+  justify-content: center;
+  background-color: #151B26;
+}
+
+.main-sub-container-phone{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+
+}
+
+.first-container-grid-phone{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 3px;
+  justify-items: center;
+  align-items: center;
+
+}
+
+
+@media only screen and (max-width: 700px) {
+.main-title-div{
+  
+ margin-top: 2rem;
+
+}
 }
