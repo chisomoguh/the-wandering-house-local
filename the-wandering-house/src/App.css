@@ -50,7 +50,7 @@ color: #1F638C;
 .top-container{
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   /* align-items: flex-end; */
   align-items: center;
 }
