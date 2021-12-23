@@ -148,7 +148,39 @@ render() {
                             <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
                           </div>
                           <div className="second-row-middle-container">
-                            {this.state.pictures.filter(picture => picture.id >= 36 &&  picture.id <= 38).map(picture => (
+                            {this.state.pictures.filter(picture => picture.id === 36).map(picture => (
+                            <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
+
+                            <div className='windows-div'>
+                              <div className='windows'>
+                                <div className='windows-top-panes'>
+                                  <div className='windows-top-panes-rectangles-left'></div>
+                                  <div className='windows-top-panes-rectangles-right'></div>
+                                </div>
+                                <div className='windows-bottom-panes'>
+                                  <div className='windows-bottom-panes-rectangles-left'></div>
+                                  <div className='windows-bottom-panes-rectangles-right'></div>
+                                </div>
+                              </div>
+                            </div>
+
+                            {this.state.pictures.filter(picture => picture.id === 37).map(picture => (
+                            <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
+
+                            <div className='windows-div'>
+                              <div className='windows'>
+                                <div className='windows-top-panes'>
+                                    <div className='windows-top-panes-rectangles-left'></div>
+                                    <div className='windows-top-panes-rectangles-right'></div>
+                                  </div>
+                                  <div className='windows-bottom-panes'>
+                                    <div className='windows-bottom-panes-rectangles-left'></div>
+                                    <div className='windows-bottom-panes-rectangles-right'></div>
+                                  </div>
+                              </div>
+                            </div>
+
+                            {this.state.pictures.filter(picture => picture.id === 38 ).map(picture => (
                             <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
                           </div>
 
@@ -183,12 +215,10 @@ render() {
                                     {this.state.pictures.filter(picture => picture.id === 41 ).map(picture => (
                                     <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
                                     <div>
-                                      {/* Add window here */}
                                     </div>
                                     {this.state.pictures.filter(picture => picture.id === 46).map(picture => (
                                     <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
                                      <div>
-                                      {/* Add window here */}
                                     </div>
                                     {this.state.pictures.filter(picture => picture.id === 49).map(picture => (
                                     <Rectangle key={picture.id} height={rectangles_measuments[picture.id].height} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id}/>))}
