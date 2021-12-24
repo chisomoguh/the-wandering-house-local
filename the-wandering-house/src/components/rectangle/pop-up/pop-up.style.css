@@ -6,6 +6,7 @@
     width: 70%;
     display: grid;
     grid-template-columns: 50% 50%;
+    overflow-y: scroll;
 }
 
 .pop-up-container-left{
@@ -51,3 +52,27 @@
     font-weight: 700;
     font-size: 1.2em;
 }
+
+@media only screen and (max-width: 700px) {
+    .pop-up-div{
+        height: 80%;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+    .pop-up-container-rigth{
+        overflow-y: initial;
+    }
+    .pop-up-container-rigth{
+        padding: 0 2rem 2rem 2rem;
+    }
+
+    .pop-up-container-left{
+        padding: 1rem 1rem 0 1rem;
+    }
+    .pop-up-flex-column{
+        height: 30vh;
+    }
+
+  } 

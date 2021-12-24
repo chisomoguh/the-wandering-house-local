@@ -309,7 +309,7 @@ render() {
             {this.state.pictures.filter(picture => picture.id >= 2 &&  picture.id <= 24 && picture.id !== 9).map(picture => (
             <Rectangle key={picture.id} height={90} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id} phone={true}/>))}
           </div>
-
+            {/* Middle */}
           <div className=''>
             {this.state.pictures.filter(picture => picture.id === 37).map(picture => (
             <Rectangle key={picture.id} height={90} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id} phone={true}/>))}
