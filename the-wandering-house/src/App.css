@@ -70,15 +70,15 @@ color: #1F638C;
 }
 
 .pop-up-container{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.52);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.52);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .stairs-container{
@@ -98,7 +98,6 @@ color: #1F638C;
   border-radius: 40px;
   height: 5px;
   background-color: #03658C;
-
 }
 
 .vertical-blue-line{
@@ -111,7 +110,6 @@ color: #1F638C;
   grid-template-columns: 25% 1% 48% 1% 25%;
 
 }
-
 
 .left-container{
   display: grid;
@@ -153,8 +151,8 @@ color: #1F638C;
   background: #1F638C;
   position: relative;
   border-radius: 45% 45% 0px 0px; 
-  width: 75%;
-  height: 75%;
+  width: 65%;
+  height: 85%;
 }
 
 .windows-top-panes {
@@ -268,7 +266,7 @@ color: #1F638C;
 .diamonds-div {
   display: flex;
   width: 100%;
-  height: inherit;
+  height: 100%;
   position: absolute;
   justify-content: space-evenly;
   align-items: center;
@@ -277,7 +275,7 @@ color: #1F638C;
 .diamonds {
   width: 5%;
   height: 60%;
-  background: #1FA2BF;
+  background: #1F638C;
   transform: rotate(-45deg);
 }
 
@@ -301,14 +299,26 @@ color: #1F638C;
   grid-row-gap: 3px;
   justify-items: center;
   align-items: center;
-
 }
 
+.pictures-with-windows-phone {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.rectangle-for-diamond-phone {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 97%;
+  height: 2.25rem;
+  box-sizing: border-box;
+  background: #BF3C1F;
+}
 
 @media only screen and (max-width: 700px) {
 .main-title-div{
-  
  margin-top: 2rem;
-
-}
+  }
 }

@@ -201,12 +201,12 @@ render() {
                                     <div className='rectangle-for-diamond'>  
                                       <div className="line"></div>
                                       <div className="diamonds-div">
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
                                       </div>
                                     </div>
                               </div>
@@ -242,12 +242,12 @@ render() {
                                       <div className="line"></div>
 
                                       <div className="diamonds-div">
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
                                       </div>
                                     </div>
 
@@ -298,26 +298,81 @@ render() {
     return (
       <div className='main-container-phone'>
         <div className='main-sub-container-phone'>
-        <div className='main-title-div'><h1 className='main-title' >I know I am home when...</h1></div>
-        <div className='blue-line'></div>
+          <div className='main-title-div'><h1 className='main-title' >I know I am home when...</h1></div>
+          <div className='blue-line'></div>
           <div className='first-container-grid-phone'>
             {this.state.pictures.filter(picture => picture.id === 1 ||  picture.id === 9).map(picture => (
             <Rectangle key={picture.id} height={90} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id} phone={true}/> ))}
           </div>
 
           <div className='first-container-grid-phone'>
-            {this.state.pictures.filter(picture => picture.id >= 2 &&  picture.id <= 24 && picture.id !== 9).map(picture => (
+            {this.state.pictures.filter(picture => picture.id >= 2 &&  picture.id <= 14 && picture.id !== 9).map(picture => (
             <Rectangle key={picture.id} height={90} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id} phone={true}/>))}
           </div>
-            {/* Middle */}
-          <div className=''>
+
+          <div className='rectangle-for-diamond-phone'>  
+            <div className="line"></div>
+
+            <div className="diamonds-div">
+              <div className='diamonds'></div>
+              <div className='diamonds'></div>
+              <div className='diamonds'></div>
+              <div className='diamonds'></div>
+              <div className='diamonds'></div>
+              <div className='diamonds'></div>
+            </div>
+          </div>
+
+          <div className='first-container-grid-phone'>
+            {this.state.pictures.filter(picture => picture.id >= 15 &&  picture.id <= 24).map(picture => (
+              <Rectangle key={picture.id} height={90} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id} phone={true}/>))}
+          </div>
+
+          <div className='pictures-with-windows-phone'>
+            <div className='windows-div'>
+                  <div className='windows'>
+                    <div className='windows-top-panes'>
+                        <div className='windows-top-panes-rectangles-left'></div>
+                        <div className='windows-top-panes-rectangles-right'></div>
+                      </div>
+                      <div className='windows-bottom-panes'>
+                        <div className='windows-bottom-panes-rectangles-left'></div>
+                        <div className='windows-bottom-panes-rectangles-right'></div>
+                      </div>
+                  </div>
+                </div>
             {this.state.pictures.filter(picture => picture.id === 37).map(picture => (
             <Rectangle key={picture.id} height={90} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id} phone={true}/>))}
+            <div className='windows-div'>
+                <div className='windows'>
+                  <div className='windows-top-panes'>
+                      <div className='windows-top-panes-rectangles-left'></div>
+                      <div className='windows-top-panes-rectangles-right'></div>
+                    </div>
+                    <div className='windows-bottom-panes'>
+                      <div className='windows-bottom-panes-rectangles-left'></div>
+                      <div className='windows-bottom-panes-rectangles-right'></div>
+                    </div>
+                </div>
+              </div>
           </div>
             
           <div className='first-container-grid-phone'>
           {this.state.pictures.filter(picture => picture.id >= 26 &&  picture.id <= 46 && picture.id !== 37  && picture.id !== 41 && picture.id !== 44 ).map(picture => (
           <Rectangle key={picture.id} height={90} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id} phone={true}/>))}
+          </div>
+          
+          <div className='rectangle-for-diamond-phone'>  
+            <div className="line"></div>
+
+            <div className="diamonds-div">
+              <div className='diamonds'></div>
+              <div className='diamonds'></div>
+              <div className='diamonds'></div>
+              <div className='diamonds'></div>
+              <div className='diamonds'></div>
+              <div className='diamonds'></div>
+            </div>
           </div>
 
           <div className='first-container-grid-phone'>
@@ -339,28 +394,24 @@ render() {
             {this.state.pictures.filter(picture => picture.id === 41 || picture.id === 49).map(picture => (
             <Rectangle key={picture.id} height={90} onClick={() => this.activePopUp(picture.id)}  image_url={picture.image_url} id={picture.id} phone={true}/>))}
           </div>
+
           { this.state.showPopUp === true ? 
-        <div className="pop-up-container" onClick={this.hidePopUp}>
-          <PopUp onClick={this.handleClickChildElement}  image_url={image_url} audio_url={audio_url} translation={translation} statement={statement}  age={age} main_text={main_text} embroiderer={embroiderer} main_font={main_font}/>
-        </div>
-        : null}
+            <div className="pop-up-container" onClick={this.hidePopUp}>
+              <PopUp onClick={this.handleClickChildElement}  image_url={image_url} audio_url={audio_url} translation={translation} statement={statement}  age={age} main_text={main_text} embroiderer={embroiderer} main_font={main_font}/>
+            </div>
+          : null}
 
-        <div>
-            <Card title={'THE WANDERING HOUSE'} />
-            <Card title={'NORTHFIELD 2019-2020'} />
-            <div className='blue-line-bottom'></div>
+          <div>
+              <Card title={'THE WANDERING HOUSE'} />
+              <Card title={'NORTHFIELD 2019-2020'} />
+              <div className='blue-line-bottom'></div>
+          </div>
         </div>
-        </div>
-
-       
-        
-      
       </div>
     );
 
   }
 
-  
 }
 
 }
