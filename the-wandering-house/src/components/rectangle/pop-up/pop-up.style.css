@@ -2,11 +2,10 @@
 
 .pop-up-div{
     background-color: white;
-    height: 65%;
+    height: 75%;
     width: 70%;
     display: grid;
     grid-template-columns: 50% 50%;
-    overflow-y: scroll;
 }
 
 .pop-up-container-left{
@@ -61,10 +60,10 @@
         flex-direction: column;
         overflow-y: scroll;
     }
-    .pop-up-container-rigth{
+    .pop-up-container-right{
         overflow-y: initial;
     }
-    .pop-up-container-rigth{
+    .pop-up-container-right{
         padding: 0 2rem 2rem 2rem;
     }
 
