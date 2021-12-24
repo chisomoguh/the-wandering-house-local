@@ -7,7 +7,7 @@
 
 .rectangle-picture{
     transition:0.4s;
-    height: max-content;
+    /* height: max-content; */
 }
 
 .rectangle-picture:hover {
