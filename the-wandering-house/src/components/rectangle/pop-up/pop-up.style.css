@@ -6,15 +6,11 @@
     width: 70%;
     display: grid;
     grid-template-columns: 50% 50%;
-    overflow-y: scroll;
-}
-
-.pop-up-container-left{
     padding: 1rem;
 }
 
 .pop-up-container-rigth{
-    padding: 1rem;
+
     overflow-y: scroll;
 }
 .pop-up-flex-box{

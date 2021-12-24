@@ -201,12 +201,12 @@ render() {
                                     <div className='rectangle-for-diamond'>  
                                       <div className="line"></div>
                                       <div className="diamonds-div">
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
                                       </div>
                                     </div>
                               </div>
@@ -242,12 +242,12 @@ render() {
                                       <div className="line"></div>
 
                                       <div className="diamonds-div">
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
-                                        <div class='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
+                                        <div className='diamonds'></div>
                                       </div>
                                     </div>
 
