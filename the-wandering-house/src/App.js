@@ -124,7 +124,7 @@ render() {
       <div className='home-div'>
         <div className='main-container'>
           <div className='blue-line'></div>
-          <div className='main-title-div'><h1 className='main-title' >I know I am home when...</h1></div>
+          <div className='main-title-div'><h1 className='main-title' >I know I am home when.. :)</h1></div>
                 
                 <div className="top-container">
                       {this.state.pictures.filter(picture => picture.id <= 9).map(picture => (
