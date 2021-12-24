@@ -3,7 +3,6 @@
     justify-content: center;
     align-items: center;
 
-    
 }
 
 .rectangle-picture{
@@ -14,3 +13,11 @@
 .rectangle-picture:hover {
     transform: scale(1.2); 
   }
+
+
+  @media only screen and (max-width: 700px) {
+    .rectangle-picture{
+        height: auto;
+    }
+
+  } 
