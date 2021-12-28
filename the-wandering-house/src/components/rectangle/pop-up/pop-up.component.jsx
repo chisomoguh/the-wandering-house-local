@@ -13,22 +13,29 @@ export const PopUp = ({ image_url, audio_url, age, statement, translation, embro
           <img
             alt='rectangle'
             src={`https://drive.google.com/uc?export=view&id=${image_url}`}
-            style={{height: '100%'}}
+            style={{width: '100%', height: '100%', objectFit: 'cover'}}
           />
         
           </div>
-          <p>Embroiderer: {embroiderer === undefined ? 'Unknown' : embroiderer}</p>
+          <p style={{fontWeight: 'bold'}}>Embroiderer: {embroiderer}</p>
           <audio controls="controls" style={{width: '90%'}} 
               src={`https://docs.google.com/uc?export=download&id=${audio_url}`}>
           </audio>
-          <p><i>{`When this was recorded, the speaker was ${age} years old.`}</i></p>
+          <p><i>{`At the time of the recording in 2019 the speaker was ${age} years old`}</i></p>
         </div>
     </div>
 
     <div className='pop-up-container-right'>
         <div className='main-text' style={{ fontFamily: `${main_font}`}}><h2>{main_text}</h2></div>
         <div className='translation' style={{ fontFamily: `${main_font}`}}><h4>{`${translation}`}</h4></div>
+
+        { statement === undefined ?
+         null 
+        :
+        <p className='pop-up-by-embroiderer-text'>{`Statement by ${embroiderer}:`}</p> }
+
         <p className='pop-up-statement-text'>{statement}</p>
+       
 
     </div>
    
