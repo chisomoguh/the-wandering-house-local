@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Rectangle from './components/rectangle/rectangle/rectangle.component'
 import Card from './components/rectangle/card/card.component.jsx'
 import PopUp from './components/rectangle/pop-up/pop-up.component.jsx'
+import MainPage from './components/main-page/main-page.jsx';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +13,8 @@ constructor(props) {
     height: 0, 
     showPopUp: false,
     popUpInfo: {},
-    pictures: []
+    pictures: [],
+    showMainPage: true,
   };
   this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   this.getPictures = this.getPictures.bind(this);
@@ -101,6 +103,10 @@ hidePopUp(){
   this.setState({ popUpInfo: {} });
 }
 
+hideMainPage() {
+  this.setState({ showMainPage: false});
+}
+
 handleClickChildElement (event){
     event.stopPropagation();
 }
@@ -122,6 +128,11 @@ render() {
     return(
 
       <div className='home-div'>
+
+        { this.state.showMainPage === true ? 
+          <MainPage onClick={ this.hideMainPage }/>
+        : null}
+
         <div className='main-container'>
           <div className='blue-line'></div>
           <div className='main-title-div'><h1 className='main-title' >I know I'm home when...</h1></div>
