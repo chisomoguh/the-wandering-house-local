@@ -3,14 +3,21 @@
     justify-content: center;
     align-items: center;
 
-    
 }
 
 .rectangle-picture{
     transition:0.4s;
-    height: max-content;
+    /* height: max-content; */
 }
 
 .rectangle-picture:hover {
     transform: scale(1.2); 
   }
+
+
+  @media only screen and (max-width: 700px) {
+    .rectangle-picture{
+        height: auto;
+    }
+
+  } 
