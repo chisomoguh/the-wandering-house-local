@@ -22,6 +22,7 @@ constructor(props) {
   this.hidePopUp = this.hidePopUp.bind(this);
   this.handleClickChildElement = this.handleClickChildElement.bind(this);
   this.cleanImageUrl = this.cleanImageUrl.bind(this);
+  this.hideMainPage = this.hideMainPage.bind(this);
 
 }
 

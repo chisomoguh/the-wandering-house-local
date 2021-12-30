@@ -13,7 +13,7 @@ export const PopUp = ({ image_url, audio_url, age, statement, translation, embro
           <img
             alt='rectangle'
             src={`https://drive.google.com/uc?export=view&id=${image_url}`}
-            style={{width: '100%', height: '100%', objectFit: 'cover'}}
+            style={{height: '100%'}}
           />
         
           </div>
