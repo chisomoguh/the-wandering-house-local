@@ -23,12 +23,12 @@ export const MainPage = ({onClick}) => (
 
       <div className='main-page-pics'>
         <img
-              alt='SOMETHING HERE'
+              alt='Bridge Square Picture'
               src={`https://drive.google.com/uc?export=view&id=1nFn7O2-Xbl0-_ghUj8-sIv4l_Xr6xNOy`}
               style={{width: '100%'}}
             />
         <img
-              alt='SOMETHINGHERE'
+              alt='Sergio Picture'
               src={`https://drive.google.com/uc?export=view&id=11VMzINfOPNogh_oSb7YA0bZ8wLr1wP4L`}
               style={{width: '100%'}}
             />  
