@@ -318,9 +318,12 @@ color: #1F638C;
   margin: 1rem 0rem;
 }
 
+
+
 @media only screen and (max-width: 700px) {
 .main-title-div{
  margin-top: 2rem;
+ grid-template-columns: 50% 50%;
   }
 
 .main-title{
