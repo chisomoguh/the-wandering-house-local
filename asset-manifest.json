@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/the-wandering-house/static/css/main.30fbf438.chunk.css",
-    "main.js": "/the-wandering-house/static/js/main.2f4072d7.chunk.js",
-    "main.js.map": "/the-wandering-house/static/js/main.2f4072d7.chunk.js.map",
+    "main.css": "/the-wandering-house/static/css/main.72ade6c2.chunk.css",
+    "main.js": "/the-wandering-house/static/js/main.02415874.chunk.js",
+    "main.js.map": "/the-wandering-house/static/js/main.02415874.chunk.js.map",
     "runtime-main.js": "/the-wandering-house/static/js/runtime-main.57b914ae.js",
     "runtime-main.js.map": "/the-wandering-house/static/js/runtime-main.57b914ae.js.map",
     "static/js/2.a015421c.chunk.js": "/the-wandering-house/static/js/2.a015421c.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.4f534e19.chunk.js": "/the-wandering-house/static/js/3.4f534e19.chunk.js",
     "static/js/3.4f534e19.chunk.js.map": "/the-wandering-house/static/js/3.4f534e19.chunk.js.map",
     "index.html": "/the-wandering-house/index.html",
-    "static/css/main.30fbf438.chunk.css.map": "/the-wandering-house/static/css/main.30fbf438.chunk.css.map",
+    "static/css/main.72ade6c2.chunk.css.map": "/the-wandering-house/static/css/main.72ade6c2.chunk.css.map",
     "static/js/2.a015421c.chunk.js.LICENSE.txt": "/the-wandering-house/static/js/2.a015421c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.57b914ae.js",
     "static/js/2.a015421c.chunk.js",
-    "static/css/main.30fbf438.chunk.css",
-    "static/js/main.2f4072d7.chunk.js"
+    "static/css/main.72ade6c2.chunk.css",
+    "static/js/main.02415874.chunk.js"
   ]
 }
