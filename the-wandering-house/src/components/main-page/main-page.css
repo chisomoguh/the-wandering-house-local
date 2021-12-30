@@ -4,9 +4,48 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background:black;
+    background:#151B26;
     z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.main-page-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-page-title {
+  color: white;
+  font-size: 2.5rem;
+  font-family: Oswald;
+}
+
+.main-page-text {
+  color: white;
+  text-align: center;
+}
+
+.read-more-link {
+  color: white;
+}
+
+.main-page-button {
+  background-color: #BF3C1F;
+  color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: bold;
+
+}
+
+.main-page-pics {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
+  grid-gap: 1rem;
 }
