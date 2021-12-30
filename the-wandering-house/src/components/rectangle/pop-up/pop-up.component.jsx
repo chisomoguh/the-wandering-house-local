@@ -14,6 +14,7 @@ export const PopUp = ({ image_url, audio_url, age, statement, translation, embro
             alt='rectangle'
             src={`https://drive.google.com/uc?export=view&id=${image_url}`}
             style={{height: '100%'}}
+            className='pop-up-img'
           />
         
           </div>
