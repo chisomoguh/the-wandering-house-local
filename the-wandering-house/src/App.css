@@ -37,6 +37,7 @@ color: #1F638C;
   background-color: #F6F1F1;
   height: 4rem;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   border-radius: 40px;
