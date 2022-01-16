@@ -147,7 +147,7 @@ render() {
       <div className='home-div'>
 
         { this.state.showMainPage === true ? 
-          <MainPage onClick1={ this.hideMainPage } onClick2={ this.showReadMore } height={this.height}/>
+          <MainPage onClick1={ this.hideMainPage } onClick2={ this.showReadMore } height={this.state.height}/>
         : null} 
         
         <div className='main-container'>
