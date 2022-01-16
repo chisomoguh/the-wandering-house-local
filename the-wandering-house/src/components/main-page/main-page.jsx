@@ -4,7 +4,7 @@ import './main-page.css';
 
 export const MainPage = ({onClick1, onClick2, height}) => (
   
-  <div className='home-page-div' style={{height: `${height}%`}}>
+  <div className='home-page-div' style={{height: `${height}px`}}>
     <div className='home-page-container'>
       <div className='main-page-ult-text'>
         <div className='main-page-title'>Welcome to the Wandering House</div>
