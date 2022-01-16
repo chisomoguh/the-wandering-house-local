@@ -9,6 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    min-height: 110%;
+    height: max-content;
 }
 
 .home-page-container {
@@ -70,6 +72,7 @@ scrollbar-width: none;
   border-radius: 12px;
   font-weight: bold;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   width: 12rem;
 
 }

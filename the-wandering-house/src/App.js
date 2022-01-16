@@ -146,14 +146,14 @@ render() {
 
       <div className='home-div'>
 
-        
-        
+        { this.state.showMainPage === true ? 
+                  <MainPage onClick1={ this.hideMainPage } onClick2={ this.showReadMore } height={this.state.height}/>
+        : null} 
+
         <div className='main-container'>
 
-        { this.state.showMainPage === true ? 
-          <MainPage onClick1={ this.hideMainPage } onClick2={ this.showReadMore } height={this.state.height}/>
-        : null} 
         
+
           <div className='blue-line'></div>
           <div className='main-title-div'>
               <img
