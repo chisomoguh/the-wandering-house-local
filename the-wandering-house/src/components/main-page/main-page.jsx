@@ -16,8 +16,7 @@ export const MainPage = ({onClick1, onClick2}) => (
               southern Minnesota.
           </p>
           <p>
-            Click on any piece of this interactive version of the Northfield Community Quilt and you will be able to listen to the sentence recorded 
-              anonymously in 2019 as well as to read a short statement by the person who, a year later, embroidered it. The Lanesboro Community Quilt is 
+              Click on any piece of this interactive version  of the Northfield Community Quilt and you will be able to listen to the sentence recorded anonymously in 2019 and read a short statement by the person who, a year later, embroidered it. The Lanesboro Community Quilt is 
               currently in the works and will be exhibited at Lanesboro Arts in early 2022. Its interactive counterpart is also upcoming, so stay tuned! 
           </p>
           <div className='read-more-text'>

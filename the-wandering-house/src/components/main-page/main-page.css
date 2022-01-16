@@ -43,8 +43,8 @@
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .main-page-text {
--ms-overflow-style: none;  /* IE and Edge */
-scrollbar-width: none;  /* Firefox */
+-ms-overflow-style: none;  
+scrollbar-width: none;  
 }
 
 .read-more-link {
@@ -70,7 +70,7 @@ scrollbar-width: none;  /* Firefox */
   border-radius: 12px;
   font-weight: bold;
   margin-top: 2rem;
-  width: 2rem;
+  width: 12rem;
 
 }
 
