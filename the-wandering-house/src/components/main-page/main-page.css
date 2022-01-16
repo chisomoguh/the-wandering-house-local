@@ -8,7 +8,6 @@
     z-index: 1;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .main-page-container {
@@ -71,6 +70,7 @@ scrollbar-width: none;  /* Firefox */
   border-radius: 12px;
   font-weight: bold;
   margin-top: 2rem;
+  width: 2rem;
 
 }
 
@@ -79,4 +79,11 @@ scrollbar-width: none;  /* Firefox */
   grid-template-columns: 50% 50%;
   justify-items: center;
   grid-gap: 1rem;
+}
+
+.button-div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

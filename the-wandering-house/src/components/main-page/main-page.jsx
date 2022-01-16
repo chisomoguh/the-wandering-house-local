@@ -46,9 +46,12 @@ export const MainPage = ({onClick1, onClick2}) => (
             />  
       </div>
 
-      <button className='main-page-button' onClick={onClick1}>
-        Explore Quilt
-      </button>
+      <div className='button-div'>
+        <button className='main-page-button' onClick={onClick1}>
+          Explore Quilt
+        </button>
+      </div>
+      
      </div> 
   </div>
 );
