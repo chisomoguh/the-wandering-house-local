@@ -156,18 +156,18 @@ render() {
 
           <div className='blue-line'></div>
           <div className='main-title-div'>
-              <img
+              {/* <img
                   alt='Wandering House Logo'
                   src={"../favicon-96x96.png"}
                   
                   style={{height: '50%'}}
-                />              
+                />               */}
               <h1 className='main-title' >I know I'm home when...</h1>
-              <img
+              {/* <img
                   alt='Wandering House Logo'
                   src={"../collabe.jpg"}
                   style={{height: '50%'}}
-                  />
+                  /> */}
             </div>
                 
                 <div className="top-container">
