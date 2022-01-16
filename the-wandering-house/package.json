@@ -2,7 +2,7 @@
   "name": "the-wandering-house",
   "version": "0.1.0",
   "private": false,
-  "homepage": "https://asguerrero.github.io/the-wandering-house",
+  "homepage": "https://twhsonicquilts.com",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
