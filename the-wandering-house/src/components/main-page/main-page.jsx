@@ -7,7 +7,7 @@ export const MainPage = ({onClick1, onClick2, height}) => (
   <div className='home-page-div' >
     <div className='home-page-container'>
       <div className='main-page-ult-text'>
-        <div className='main-page-title'>Welcome to the Wandering House</div>
+        <div className='main-page-title'>Welcome to The Wandering House</div>
         <div className='main-page-text'>
           <p>
             Comprised of 49 embroidered sentences, the Northfield Community Quilt is one of several works coming out of The Wandering House,
