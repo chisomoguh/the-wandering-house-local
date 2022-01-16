@@ -26,7 +26,36 @@ export const MainPage = ({onClick1, onClick2, height}) => (
                 their thoughts on home in a physical space created solely for this purpose. Ranging in age from two to ninety-one years old, project participants 
                 included farmers, youths in high school and college, people with disabilities, immigrants from Central and South America, families with young children, 
                 and older adults living in retirement communities. 
-              </p>       
+              </p>  
+
+              <p>
+              In the fall of 2020, Cecilia invited Northfield and Lanesboro residents to embroider a selection of fragments
+              from the audio collected a year before. All these fragments came from audio snippets responding to the
+              prompt “I know I’m home when...” and reflected a wide range of sentiments. From September to December
+              2020, over 80 participants from both towns met periodically over Zoom to exchange embroidering tips,
+              design ideas, and to enjoy each other’s company. Since then, the embroidered fragments have been assembled
+              into two community quilts, one for each town, that function as repositories of the testimonies recorded and a
+              testament to creativity and collaboration under pandemic.
+              </p>    
+
+              <p>
+              The Northfield Community Quilt was developed by Cecilia Cornejo Sotelo in collaboration with Northfield
+              residents. The final piece was assembled and quilted by Northfield fiber artist Cindy Starkey Robinson. This
+              interactive version of the Northfield Community Quilt was developed in partnership with students Valentina
+              Guerrero Chala and Chisom Oguh, thanks to a grant from the Humanities Center at Carleton College.
+              </p> 
+
+              <p>
+              The embroiderers are: <br/>
+                  Molly Andrews, Debra Beck, Vanessa Bodrie, Annie Boehm, Laurel Bradley, Cecilia Cornejo Sotelo,
+                  Suzanne Daehlin, Angelique Dietz, Joan Ennis, Kristina Felbeck, Cortney Fischer, Lucy Gonzáles Mirón,
+                  Clarice Grenier Grabau, Hannah Hamalian, Patricia Johnson, Margit Johnson, Jessica Keating, Brenda
+                  Keilen, Alec Lavoi, Heather Lawrenz, Virginia Lorang, Arielle Loy, Natalia Marchan, Kristal McNamara,
+                  Amy Merritt, MurphyKate Montee, Ayaka Moriyama, Gabriela Muñoz, Liora Newman, Chely Og,
+                  Kristin Partlo, Jessica Peterson White, Wendy Placko, Wanda Playter, Lorraine Rovig, Emily Scharf, Jacyn
+                  Schmidt, Anna Schumacher, Lisa Sexton, Yemi Shin, Betty Suárez, Jean Vick, Jennifer Welbaum, Jennifer
+                  Williams Toth, and Erica Zweifel and Christof Zweifel.
+              </p> 
           </div>
           <button className='read-more-btn' onClick={onClick2}>Read More...</button>
         </div>
