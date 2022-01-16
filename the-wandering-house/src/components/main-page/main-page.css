@@ -1,5 +1,5 @@
 .main-page-div {
-    position: fixed;
+    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
@@ -13,7 +13,6 @@
 .main-page-container {
   width: 60%;
   display: flex;
-  position: fixed;
   flex-direction: column;
   justify-content: center;
   /* align-items: center; */
