@@ -4,6 +4,7 @@ import Card from './components/rectangle/card/card.component.jsx'
 import PopUp from './components/rectangle/pop-up/pop-up.component.jsx'
 import MainPage from './components/main-page/main-page.jsx';
 import './App.css';
+import './components/main-page/main-page.jsx'
 
 class App extends Component {
 constructor(props) {
@@ -23,6 +24,8 @@ constructor(props) {
   this.handleClickChildElement = this.handleClickChildElement.bind(this);
   this.cleanImageUrl = this.cleanImageUrl.bind(this);
   this.hideMainPage = this.hideMainPage.bind(this);
+  this.showReadMore = this.showReadMore.bind(this);
+  this.mainPagePictures = this.mainPagePictures.bind(this);
 
 }
 
@@ -108,6 +111,19 @@ hideMainPage() {
   this.setState({ showMainPage: false});
 }
 
+showReadMore(event) {
+  const current = event.target;
+  const theParent = current.parentElement;
+  const theText = theParent.getElementsByClassName('read-more-text')[0];
+  theText.classList.toggle('read-more-text--show');
+  current.textContent = current.textContent.includes('Read More...') ?
+  "Read Less..." : "Read More..."
+}
+
+mainPagePictures() {
+  var img = new Image();
+}
+
 handleClickChildElement (event){
     event.stopPropagation();
 }
@@ -131,12 +147,25 @@ render() {
       <div className='home-div'>
 
         { this.state.showMainPage === true ? 
-          <MainPage onClick={ this.hideMainPage }/>
-        : null}
-
+          <MainPage onClick1={ this.hideMainPage } onClick2={ this.showReadMore }/>
+        : null} 
+        
         <div className='main-container'>
           <div className='blue-line'></div>
-          <div className='main-title-div'><h1 className='main-title' >I know I'm home when...</h1></div>
+          <div className='main-title-div'>
+              <img
+                  alt='Wandering House Logo'
+                  src={"../public/favicon-96x96.png"}
+                  
+                  style={{height: '50%'}}
+                />              
+              <h1 className='main-title' >I know I'm home when...</h1>
+              <img
+                  alt='Wandering House Logo'
+                  src={"..public/collabe.jpg"}
+                  style={{height: '50%'}}
+                  />
+            </div>
                 
                 <div className="top-container">
                       {this.state.pictures.filter(picture => picture.id <= 9).map(picture => (
