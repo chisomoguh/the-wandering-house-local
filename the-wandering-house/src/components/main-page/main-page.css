@@ -16,9 +16,9 @@
   position: fixed;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  flex-basis: auto;
-  flex-shrink: 1;
+  /* align-items: center; */
+  margin-top: 2rem;
+  
 }
 
 .main-page-title {
