@@ -4,8 +4,8 @@ import './main-page.css';
 
 export const MainPage = ({onClick1, onClick2}) => (
   
-  <div className='main-page-div'>
-    <div className='main-page-container'>
+  <div className='home-page-div'>
+    <div className='home-page-container'>
       <div className='main-page-ult-text'>
         <div className='main-page-title'>Welcome to the Wandering House</div>
         <div className='main-page-text'>
