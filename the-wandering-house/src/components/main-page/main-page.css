@@ -77,11 +77,12 @@ scrollbar-width: none;
 
 }
 
-.main-page-pics {
+.home-page-pics {
   display: grid;
   grid-template-columns: 50% 50%;
   justify-items: center;
   grid-gap: 1rem;
+  margin-top: 2rem;
 }
 
 .button-div{

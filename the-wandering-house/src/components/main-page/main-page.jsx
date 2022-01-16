@@ -4,7 +4,7 @@ import './main-page.css';
 
 export const MainPage = ({onClick1, onClick2, height}) => (
   
-  <div className='home-page-div' style={{height: `${height}px`}}>
+  <div className='home-page-div' >
     <div className='home-page-container'>
       <div className='main-page-ult-text'>
         <div className='main-page-title'>Welcome to the Wandering House</div>
@@ -61,7 +61,7 @@ export const MainPage = ({onClick1, onClick2, height}) => (
         </div>
       </div>
 
-      <div className='main-page-pics'>
+      <div className='home-page-pics'>
         <img
               alt='Bridge Square Picture'
               src={`https://drive.google.com/uc?export=view&id=1nFn7O2-Xbl0-_ghUj8-sIv4l_Xr6xNOy`}
