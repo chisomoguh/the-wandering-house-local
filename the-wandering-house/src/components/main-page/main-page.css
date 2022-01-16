@@ -62,7 +62,12 @@ scrollbar-width: none;
 }
 
 .read-more-btn {
-  color: black;
+  color: white;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+
 }
 
 .main-page-button {
