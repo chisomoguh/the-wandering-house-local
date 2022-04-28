@@ -9,7 +9,7 @@ export const Rectangle = ({height, image_url, onClick, id }) => (
     <img
       className='rectangle-picture'
       alt='rectangle'
-      src={`Images/${id}.jpg`}
+      src={`images/${id}.jpg`}
       style={{width: `${height}%`}}
       onClick={onClick}
     />

@@ -12,7 +12,7 @@ export const PopUp = ({ image_url, audio_url, age, statement, translation, embro
 
           <img
             alt='rectangle'
-            src={`https://drive.google.com/uc?export=view&id=${image_url}`}
+            src={`images/${id}.jpg`}
             style={{height: '100%'}}
             className='pop-up-img'
           />
@@ -20,7 +20,7 @@ export const PopUp = ({ image_url, audio_url, age, statement, translation, embro
           </div>
           <p style={{fontWeight: 'bold'}}>Embroiderer: {embroiderer}</p>
           <audio controls="controls" style={{width: '90%'}} 
-              src={`https://docs.google.com/uc?export=download&id=${audio_url}`}>
+              src={`audio/${id}.jpg`}>
           </audio>
           <p><i>{`At the time of the recording in 2019 the speaker was ${age} years old`}</i></p>
         </div>

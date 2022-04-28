@@ -64,12 +64,12 @@ export const MainPage = ({onClick1, onClick2, height}) => (
       <div className='home-page-pics'>
         <img
               alt='Bridge Square Picture'
-              src={`https://drive.google.com/uc?export=view&id=1nFn7O2-Xbl0-_ghUj8-sIv4l_Xr6xNOy`}
+              src='images/main_page/main_page_1.jpg'
               style={{width: '100%'}}
             />
         <img
               alt='Sergio Picture'
-              src={`https://drive.google.com/uc?export=view&id=11VMzINfOPNogh_oSb7YA0bZ8wLr1wP4L`}
+              src='images/main_page/main_page_2.jpg'
               style={{width: '100%'}}
             />  
       </div>
