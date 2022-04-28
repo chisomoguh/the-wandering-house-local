@@ -9,7 +9,7 @@ export const Rectangle = ({height, image_url, onClick, id }) => (
     <img
       className='rectangle-picture'
       alt='rectangle'
-      src={`https://drive.google.com/uc?export=view&id=${image_url}`}
+      src='Images./1.jpg'
       style={{width: `${height}%`}}
       onClick={onClick}
     />
