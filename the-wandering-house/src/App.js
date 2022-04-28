@@ -83,7 +83,8 @@ getPopUpInfo(id){
                                                           age: popUpAttributes.records[0].fields.Age,
                                                           embroiderer: popUpAttributes.records[0].fields.Embroiderer,
                                                           audio_url :popUpAttributes.records[0].fields["Audio Link"],
-                                                          main_font: this.chooseRandomFont()
+                                                          main_font: this.chooseRandomFont(),
+                                                          id: id
                                                         }; console.log(`Pop up attributes: ${popUpAttributes}`); return temp_dict})
 
   .then(popUpInfoDict => this.setState({ popUpInfo: popUpInfoDict}));
@@ -130,7 +131,7 @@ handleClickChildElement (event){
 
 render() {
   
-  const { image_url, audio_url, age, statement, translation, embroiderer, main_text, main_font} = this.state.popUpInfo;
+  const { image_url, audio_url, age, statement, translation, embroiderer, main_text, rectangle_id, main_font} = this.state.popUpInfo;
 
 
   const rectangles_measuments= [{}, {id:1, height:70}, {id:2, height:90}, {id:3, height:90}, {id:4, height:90}, {id:5, height:90}, {id:6, height:90}, {id:7, height:90}, {id:8, height:90}, {id:9, height:70}, 
@@ -330,7 +331,7 @@ render() {
 
         { this.state.showPopUp === true ? 
         <div className="pop-up-container" onClick={this.hidePopUp}>
-          <PopUp onClick={this.handleClickChildElement}  image_url={image_url} audio_url={audio_url} translation={translation} statement={statement}  age={age} main_text={main_text} embroiderer={embroiderer} main_font={main_font}/>
+          <PopUp onClick={this.handleClickChildElement}  image_url={image_url} audio_url={audio_url} translation={translation} statement={statement}  age={age} main_text={main_text} embroiderer={embroiderer} main_font={main_font} rectangle_id={rectangle_id}/>
         </div>
         : null}
       </div>
