@@ -20,7 +20,7 @@ export const PopUp = ({ image_url, audio_url, age, statement, translation, embro
           </div>
           <p style={{fontWeight: 'bold'}}>Embroiderer: {embroiderer}</p>
           <audio controls="controls" style={{width: '90%'}} 
-              src={`audio/${rectangle_id}.jpg`}>
+              src={`audio/${rectangle_id}.wav`}>
           </audio>
           <p><i>{`At the time of the recording in 2019 the speaker was ${age} years old`}</i></p>
         </div>

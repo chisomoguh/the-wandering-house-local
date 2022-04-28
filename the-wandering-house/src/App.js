@@ -84,7 +84,7 @@ getPopUpInfo(id){
                                                           embroiderer: popUpAttributes.records[0].fields.Embroiderer,
                                                           audio_url :popUpAttributes.records[0].fields["Audio Link"],
                                                           main_font: this.chooseRandomFont(),
-                                                          id: id
+                                                          rectangle_id: id,
                                                         }; console.log(`Pop up attributes: ${popUpAttributes}`); return temp_dict})
 
   .then(popUpInfoDict => this.setState({ popUpInfo: popUpInfoDict}));
