@@ -42,7 +42,7 @@ export const MainPage = ({onClick1, onClick2, height}) => (
               The Northfield Community Quilt was developed by Cecilia Cornejo Sotelo in collaboration with Northfield
               residents. The final piece was assembled and quilted by Northfield fiber artist Cindy Starkey Robinson. This
               interactive version of the Northfield Community Quilt was developed in partnership with students Valentina
-              Guerrero Chala and Chisom Oguh, thanks to a grant from the Humanities Center at Carleton College.
+              Guerrero Chala and Chisomnazu Oguh, thanks to a grant from the Humanities Center at Carleton College.
               </p> 
 
               <p>
